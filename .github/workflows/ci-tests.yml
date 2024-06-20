@@ -2,7 +2,7 @@ name: CI Tests
 on:
   pull_request:
     branches:
-      - 'deployment-test-branch'
+      - 'workflow-dev'
     paths:
       - 'best-practices/code/**'
 jobs:
