@@ -4,7 +4,7 @@ on:
     branches:
       - 'deployment-test-branch'
     paths:
-      - 'best-practices/**'
+      - 'best-practices/code/**'
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -17,7 +17,9 @@ jobs:
 
 
       - name: Install dependencies
-        working-directory: 'best-practices/'
+        working-directory: 'best-practices/code'
         run: pip install pipen && pipenv install --dev
 
       - name: Run Unit test
+        working-directory: "best-practices/code"
+        run: pipenv run pytest tests/
